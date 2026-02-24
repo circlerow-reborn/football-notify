@@ -1,0 +1,7 @@
+feedparser
+python-telegram-bot
+google-genai
+pymongo
+APScheduler
+python-dotenv
+requests
