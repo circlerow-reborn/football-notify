@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
-from datetime import UTC, datetime
+from datetime import datetime, timezone
 from typing import Optional
 
 from pymongo import MongoClient
@@ -38,7 +38,7 @@ class ArticleStore:
             "url": item.url,
             "title": item.title,
             "source": item.source,
-            "sent_at": item.sent_at or datetime.now(UTC),
+            "sent_at": item.sent_at or datetime.now(timezone.utc),
         }
         try:
             self._sent.insert_one(doc)
